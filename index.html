@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Estadistica</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="container">
+        <form method="post" id="frmestadistica">
+           <div>
+                <h1>Moda, Media y Mediana</h1><br>
+                <select id="select" onchange="selectbox()" class="form-control btn bg-info text-white" >
+                <option value="" disabled selected>Seleccionar</option>
+                 <option value="moda">Moda </option>
+                  <option value="media">Media</option>
+                 <option value="mediana">Mediana</option>
+            
+                 </select>
+                 <br>
+		        <br><input id="txtdatos" type="text"  placeholder="Pon los valores separados por ','"><br>
+                <p class="p-1 mb-1 bg-info text-white" id="lblrespu">Respuesta: ?</p><br>
+               
+             <div class="col text-center">
+            <input type="submit" id="btncalcular" value="Calcular" class="btn btn-primary">
+        </div>
+    </div>
+    </form>
+</body>
+<script src="app.js"></script>
+</html>
