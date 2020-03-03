@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", e=>{
     const form = document.querySelector("#frmestadistica");
     form.addEventListener("submit", event=>{
-      
         event.preventDefault();
         var osc=document.getElementById("select").value;  
         var txtdato=document.querySelector("#txtdatos").value;
@@ -9,7 +8,23 @@ document.addEventListener("DOMContentLoaded", e=>{
         txtdato.split(",");
 
             if(osc=="moda"){
-                moda(txtdato);
+                let lista = txtdato.split(",").map(Number);
+                let max=0,val=0,defmod=0;
+                var counter={};
+                var mode =[];
+                for(var i in lista){
+                    if(!(lista[i] in counter))
+                    counter[lista[i]]=0;
+                    counter[lista[i]]++;
+                    if(counter[lista[i]]==max)
+                    mode.push(lista[i]);
+                    else if (counter[lista[i]]>max){
+                        max = counter[lista[i]];
+                        mode = [lista[i]];
+                        let  $resp=document.querySelector("#lblrespu");
+                        $resp.innerHTML =`La moda es:  ${(mode)}`;
+                    }
+                }
                     
             }
             else if(osc=="media"){
@@ -20,24 +35,7 @@ document.addEventListener("DOMContentLoaded", e=>{
         }
     });
 });
-function moda(serie=[]){
-let lista = txtdato.split(",").map(Number);
-            let max=0, val=0,defmod=0;
-            var counter={};
-            var mode=[];
-                for(var i in lista){
-                    if(!(lista[i] in counter))
-                    counter[lista[i]]=0;
-                    counter[lista[i]]++;
-                    if(counter[lista[i]]==max)
-                    mode.push(lista[i]);
-                    else if (counter[lista[i]]>max){
-                        max = counter[lista[i]];
-                        mode = [lista[i]];
-                        $resp.innerHTML =`La moda es:  ${mode.length}`;
-                        }
-                }
-}
+
 function media(serie=[]){
     //obtener los datos
     var txtdato=document.querySelector("#txtdatos").value;
