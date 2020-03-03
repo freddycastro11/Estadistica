@@ -3,7 +3,11 @@ document.addEventListener("DOMContentLoaded", e=>{
     form.addEventListener("submit", event=>{
         event.preventDefault();
         var osc=document.getElementById("select").value;  
+
         var txtdato=document.querySelector("#txtdatos").value;
+
+        let  $resp=document.querySelector("#lblrespu");
+
         //split sirve para separar los datos
         txtdato.split(",");
 
@@ -21,7 +25,6 @@ document.addEventListener("DOMContentLoaded", e=>{
                     else if (counter[lista[i]]>max){
                         max = counter[lista[i]];
                         mode = [lista[i]];
-                        let  $resp=document.querySelector("#lblrespu");
                         $resp.innerHTML =`La moda es:  ${(mode)}`;
                     }
                 }
@@ -31,7 +34,12 @@ document.addEventListener("DOMContentLoaded", e=>{
               media(txtdato);
             }
             else if(osc=="mediana"){
-             mediana(txtdato);
+                let lista = txtdato.split(",").map(Number);
+                lista.sort((a,b)=>a-b);
+                let lowmiddle = Math.floor((lista.length-1)/2);
+                let highmiddle = Math.ceil((lista.length-1)/2);
+                let mediana= (lista[lowmiddle]+lista[highmiddle])/2;
+                $resp.innerHTML = `La mediana es:  ${(mediana)}`;
         }
     });
 });
