@@ -70,17 +70,14 @@ function desvia(serie=[]){
     var sumacuadrado = 0, sumaNormal =0;
     arreglo.forEach(function (index) {
         sumaNormal += parseInt(index);
-        console.log(sumaNormal);
     });
-        let media = sumaN / arreglo.length;
-        console.log("media ", media);
-        
+        let media = sumaNormal / arreglo.length;
+
         arreglo.forEach(function (elementos) {
             sumacuadrado += Math.pow(elementos - media, 2) / arreglo.length;
         });
         console.log("suma cuadrado", sumacuadrado);
     let $resp = document.querySelector("#lblrespu");
-    //imprime la salida
     $resp.innerHTML = `La desviacion tipica es:  ${(sumacuadrado)}`;
     }
     
