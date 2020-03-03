@@ -40,7 +40,10 @@ document.addEventListener("DOMContentLoaded", e=>{
                 let highmiddle = Math.ceil((lista.length-1)/2);
                 let mediana= (lista[lowmiddle]+lista[highmiddle])/2;
                 $resp.innerHTML = `La mediana es:  ${(mediana)}`;
-        }
+            }
+             else if(osc=="desviacion tipica"){
+              
+            }
     });
 });
 
@@ -59,4 +62,3 @@ function media(serie=[]){
     //imprime la salida
     $resp.innerHTML=`La Media es:  ${(suma/arreglo.length)}`;
 }
-
