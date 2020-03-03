@@ -76,7 +76,6 @@ function desvia(serie=[]){
         arreglo.forEach(function (elementos) {
             sumacuadrado += Math.pow(elementos - media, 2) / arreglo.length;
         });
-        console.log("suma cuadrado", sumacuadrado);
     let $resp = document.querySelector("#lblrespu");
     $resp.innerHTML = `La desviacion tipica es:  ${(sumacuadrado)}`;
     }
