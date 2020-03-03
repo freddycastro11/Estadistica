@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", e=>{
                 $resp.innerHTML = `La mediana es:  ${(mediana)}`;
             }
              else if(osc=="desviacion tipica"){
-              
+                 desvia(txtdato);
             }
     });
 });
@@ -62,3 +62,27 @@ function media(serie=[]){
     //imprime la salida
     $resp.innerHTML=`La Media es:  ${(suma/arreglo.length)}`;
 }
+
+function desvia(serie=[]){
+    var txtdato = document.querySelector("#txtdatos").value;
+    var separador = ",",
+        arreglo = txtdato.split(separador);
+    var sumacuadrado = 0, sumaN =0;
+    arreglo.forEach(function (index) {
+        sumaN += parseInt(index);
+        console.log(sumaN);
+    });
+        let media = sumaN / arreglo.length;
+        console.log("media ", media);
+
+        arreglo.forEach(function (elementos) {
+            sumacuadrado += Math.pow(elementos - media, 2) / arreglo.length;
+        });
+        console.log("suma cuadrado", sumacuadrado);
+        let desviacionestandar = Math.sqrt(sumacuadrado)
+    let $resp = document.querySelector("#lblrespu");
+    //imprime la salida
+    $resp.innerHTML = `La desviacion tipica es:  ${(sumacuadrado)}`;
+    }
+    
+
