@@ -16,14 +16,38 @@
                    <br> Desviacion Tipica y Estandar</h1><br>
                 <select id="select"  class="form-control btn bg-info text-white" >
                 <option value="" disabled selected>Seleccionar</option>
-                 <option value="moda">Moda </option>
-                  <option value="media">Media</option>
-                 <option value="mediana">Mediana</option>
-                 <option value="desviacion tipica">Desviacion Tipica </option>
-                  <option value="desviacion estandar">Desviacion Estandar</option>
-                 </select>
-                 <br>
-		        <br><input id="txtdatos" type="text"  placeholder="Pon los valores separados por ','"><br>
+                 <option value="Moneda">Moneda </option>
+                <option value="Longitud">longitud</option>
+                </select>
+                 <div class="row row-cols-2 p-2">
+                     <div class="col">
+                         DE: <select id="cboDeMonedas" class="form-control">
+                             <option value="dolar">Dolar</option>
+                             <option value="euro">Euros</option>
+                             <option value="quetzal">Quetzales</option>
+                             <option value="lempira">Lempira</option>
+                             <option value="cordoba">Cordoba</option>
+                             <option value="Metro">Metro</option>
+                             <option value="Centimetro">Centimetro</option>
+                             <option value="Kilometro">Kilometro</option>
+                             <option value="Millas">Millas</option>
+                         </select>
+                     </div>
+                     <div class="col">
+                         A: <select id="cboAMonedas" class="form-control">
+                             <option value="dolar">Dolar</option>
+                             <option value="euro">Euros</option>
+                             <option value="quetzal">Quetzales</option>
+                             <option value="lempira">Lempira</option>
+                             <option value="cordoba">Cordoba</option>
+                             <option value="Metro">Metro</option>
+                             <option value="Centimetro">Centimetro</option>
+                             <option value="Kilometro">Kilometro</option>
+                             <option value="Millas">Millas</option>
+                         </select>
+                     </div>
+                 </div>
+		            <input id="txtdatos" type="text"  placeholder="Ingrese la cantidad"><br>
                 <p class="p-1 mb-1 bg-info text-white" id="lblrespu">Respuesta: ?</p><br>
                
              <div class="col text-center">
